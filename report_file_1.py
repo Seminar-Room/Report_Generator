@@ -17,7 +17,6 @@ import zipfile
 
 
 
-
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
@@ -28,9 +27,6 @@ def register_fonts():
 
     font_path2 = r'E:\SEMINARROM\\CERTIFICATE_GENERATION\seminar_room_certificate_details\\fonts\\Poppins-Bold.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Bold', font_path2))
-
-    font_path3 = r'E:\SEMINARROM\\CERTIFICATE_GENERATION\seminar_room_certificate_details\\fonts\\Poppins-SemiBold.ttf'
-    pdfmetrics.registerFont(TTFont('Poppins-SemiBold', font_path3))
 
 
 register_fonts()
