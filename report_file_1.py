@@ -685,10 +685,6 @@ class iip_reports:
         self.canvas.drawImage(snap2, snap2_x, snap2_y, snap2_width, snap2_height)
 
 
-
-
-
-
 #directory="E:\SEMINARROM\REPORT_GENERATION\Generated reports\\flask_generated_report"
 def iip_report_generator(
         event_name, college_name, college_logo, #coverpage 
@@ -729,7 +725,7 @@ def iip_report_generator(
     #return pdf_canvas
 
     # Create a ZIP file containing all certificates
-    gen='E:\SEMINARROM\REPORT_GENERATION\Generated reports\\flask_generated_report'
+    gen='flask_generated'
     zip_filename = os.path.join(gen, f'{temp_folder}.zip')
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
         for root, _, files in os.walk(temp_folder):

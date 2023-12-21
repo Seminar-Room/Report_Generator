@@ -197,7 +197,10 @@ def snapshots():
                                         snap1,snap2 #snapshots
                                         )
             report_file_1.delete_temporary_directory(f'{college_name}_IIP_report')
-            return send_file(pdf_file, as_attachment=True, download_name=f"{college_name}_IIP_Report.pdf")
+            d=send_file(pdf_file, as_attachment=True, download_name=f"{college_name}_IIP_Report.pdf")
+            report_file_1.delete_temporary_directory('Flask_generated')
+
+            return d
 
         return render_template('snapshots.html')
 
