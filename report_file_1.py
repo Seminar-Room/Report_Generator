@@ -18,10 +18,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 
 def register_fonts():
-    font_path1 = r'E:\SEMINARROM\\CERTIFICATE_GENERATION\seminar_room_certificate_details\\fonts\\Poppins-Regular.ttf'
+    font_path1 = r'testing_details\\fonts\\Poppins-Regular.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Regular', font_path1))
 
-    font_path2 = r'E:\SEMINARROM\\CERTIFICATE_GENERATION\seminar_room_certificate_details\\fonts\\Poppins-Bold.ttf'
+    font_path2 = r'testing_details\\fonts\\Poppins-Bold.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Bold', font_path2))
 
 
@@ -60,7 +60,7 @@ class iip_reports:
         self.canvas.showPage()
         
         #addind back ground template
-        background_path = 'E:\SEMINARROM\REPORT_GENERATION\\testing_details\Feedback FSD - DGI.png'
+        background_path = 'testing_details\Feedback FSD - DGI.png'
         # Draw the background image
         self.canvas.drawImage(background_path, 0, 0, width=210*mm, height=297*mm)
 
@@ -68,7 +68,7 @@ class iip_reports:
     def add_coverpage(self,event_name, college_name, college_logo):
         #coverpage
         # Add a background image of your choice as the certificate template
-        background_path = 'E:\SEMINARROM\REPORT_GENERATION\Sample_reports\\1.png'
+        background_path = 'Sample_reports\\1.png'
         # Draw the background image
         self.canvas.drawImage(background_path, 0, 0, width=210*mm, height=297*mm)
 
