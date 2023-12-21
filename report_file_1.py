@@ -11,12 +11,8 @@ from reportlab.lib.enums import TA_JUSTIFY
 #bar chart
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
-
 import os
 import zipfile
-
-
-
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
@@ -256,7 +252,76 @@ class iip_reports:
         keep_in_frame = KeepInFrame(frame_width, frame_height,paragraph)
         # Build the story within the frame
         frame.addFromList([keep_in_frame], self.canvas)
+    ############################################################# PAGE_4 ###############################################
+    def add_about_session(self, topic, date, timings,About_the_Session,learning_outcomes):
 
+        #adding background and page break
+        self.add_background_template()
+
+        # Define styles for different parts of the paragraph
+        Bold_Style1 = ParagraphStyle(
+                                        "Bold_Style1",
+                                        fontSize=28,
+                                        fontName="Poppins-Bold",
+                                        textColor=colors.HexColor("#612180"),
+                                        alignment=0,
+                                        leading=8*mm
+                                    )
+        Bold_Style2 = ParagraphStyle(
+                                        "Bold_Style2",
+                                        fontSize=18,
+                                        fontName="Poppins-Bold",
+                                        textColor=colors.HexColor("#BA447B"),
+                                        alignment=0,
+                                        leading=8*mm
+                                    )
+        Bold_Style5 = ParagraphStyle(
+                                        "Bold_Style5",
+                                        fontSize=18,
+                                        fontName="Poppins-Bold",
+                                        textColor=colors.HexColor("#600280"),
+                                        alignment=0,
+                                        leading=6*mm
+                                    )
+        font_Style1 = ParagraphStyle(
+                                        "font_Style1",
+                                        fontSize=16,
+                                        fontName="Poppins-Regular",
+                                        textColor=colors.black,
+                                        alignment=TA_JUSTIFY,
+                                        leading=8*mm
+                                    )
+            
+        #adding heading of the page 
+        #frame
+        frame1_width = 190*mm # Adjust the width as needed
+        frame1_height = 230 * mm  # Adjust the height as needed
+        frame1_x = (page_width - frame1_width) / 2 
+        frame1_y =25* mm
+        frame1 = Frame(frame1_x, frame1_y, frame1_width, frame1_height, showBoundary=0)  # Set showBoundary=1 for debugging
+
+        paragraph1=[
+                        Paragraph('Industry Inspiration Program',Bold_Style1),
+                        Spacer(1,14),
+                        Paragraph(f'{topic}',Bold_Style2),
+                        Spacer(1,8),
+                        Paragraph(f'Date and Time: {date} | {timings}',Bold_Style2),
+                        Spacer(1,10),
+                        Paragraph('About The Session:',Bold_Style5),
+                        Spacer(1,4),
+                        Paragraph(f'{About_the_Session}',font_Style1),
+                        Spacer(1,6),
+                        Paragraph('Learning outcomes:',Bold_Style5),
+                        Spacer(1,4),
+                        Paragraph(f'{learning_outcomes}',font_Style1),
+
+                    
+                    ]
+        # Create a KeepInFrame to hold the paragraph elements within the frame
+        keep_in_frame1 = KeepInFrame(frame1_width, frame1_height,paragraph1)
+        # Build the story within the frame
+        frame1.addFromList([keep_in_frame1], self.canvas)
+    
     ############################################################# PAGE_5 ###############################################
     def add_about_speaker(self,sme_photo,sme_name,sme_designation,sme_p1, sme_p2, sme_p3):
 
@@ -369,76 +434,6 @@ class iip_reports:
         keep_in_frame4 = KeepInFrame(frame4_width, frame4_height,paragraph4)
         # Build the story within the frame
         frame4.addFromList([keep_in_frame4], self.canvas)
-
-    ############################################################# PAGE_4 ###############################################
-    def add_about_session(self, topic, date, timings,About_the_Session,learning_outcomes):
-
-        #adding background and page break
-        self.add_background_template()
-
-        # Define styles for different parts of the paragraph
-        Bold_Style1 = ParagraphStyle(
-                                        "Bold_Style1",
-                                        fontSize=28,
-                                        fontName="Poppins-Bold",
-                                        textColor=colors.HexColor("#612180"),
-                                        alignment=0,
-                                        leading=8*mm
-                                    )
-        Bold_Style2 = ParagraphStyle(
-                                        "Bold_Style2",
-                                        fontSize=18,
-                                        fontName="Poppins-Bold",
-                                        textColor=colors.HexColor("#BA447B"),
-                                        alignment=0,
-                                        leading=8*mm
-                                    )
-        Bold_Style5 = ParagraphStyle(
-                                        "Bold_Style5",
-                                        fontSize=18,
-                                        fontName="Poppins-Bold",
-                                        textColor=colors.HexColor("#600280"),
-                                        alignment=0,
-                                        leading=6*mm
-                                    )
-        font_Style1 = ParagraphStyle(
-                                        "font_Style1",
-                                        fontSize=16,
-                                        fontName="Poppins-Regular",
-                                        textColor=colors.black,
-                                        alignment=TA_JUSTIFY,
-                                        leading=8*mm
-                                    )
-            
-        #adding heading of the page 
-        #frame
-        frame1_width = 190*mm # Adjust the width as needed
-        frame1_height = 230 * mm  # Adjust the height as needed
-        frame1_x = (page_width - frame1_width) / 2 
-        frame1_y =25* mm
-        frame1 = Frame(frame1_x, frame1_y, frame1_width, frame1_height, showBoundary=0)  # Set showBoundary=1 for debugging
-
-        paragraph1=[
-                        Paragraph('Industry Inspiration Program',Bold_Style1),
-                        Spacer(1,14),
-                        Paragraph(f'{topic}',Bold_Style2),
-                        Spacer(1,8),
-                        Paragraph(f'Date and Time: {date} | {timings}',Bold_Style2),
-                        Spacer(1,10),
-                        Paragraph('About The Session:',Bold_Style5),
-                        Spacer(1,4),
-                        Paragraph(f'{About_the_Session}',font_Style1),
-                        Spacer(1,6),
-                        Paragraph('Learning outcomes:',Bold_Style5),
-                        Spacer(1,4),
-                        Paragraph(f'{learning_outcomes}',font_Style1),
-
-                    
-                    ]
-        # Create a KeepInFrame to hold the paragraph elements within the frame
-        keep_in_frame1 = KeepInFrame(frame1_width, frame1_height,paragraph1)
-        # Build the story within the frame
-        frame1.addFromList([keep_in_frame1], self.canvas)
 
     ######################################################## PAGE_6 ########################################################
     def add_feedback_graphs(self, happiness_rating, expectation_rating, knowledge_rating, overall_rating):
