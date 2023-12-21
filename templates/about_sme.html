@@ -27,7 +27,23 @@
     </style>
 </head>
 <body>
-    <h1>Enter SME Details (Page 4)</h1>
+    <h1>Session Details (Page 4)</h1>
+        <label for="topic">Topic:</label><br>
+        <textarea type="text" id="topic" name="topic" rows="4" cols="50"></textarea><br><br>
+
+        <label for="date">Date:</label><br>
+        <input type="text" id="date" name="date"><br><br>
+
+        <label for="timings">Timings:</label><br>
+        <input type="text" id="timings" name="timings"><br><br>
+        
+        <label for="About_the_Session">About the Session:</label><br>
+        <textarea id="About_the_Session" name="About_the_Session" rows="4" cols="80"></textarea><br><br>
+
+        <label for="learning_outcomes">Learning Outcomes:</label><br>
+        <textarea id="learning_outcomes" name="learning_outcomes" rows="4" cols="50"></textarea><br><br>
+        
+    <h1>Enter SME Details (Page 5)</h1>
     <form action="/about_sme" method="post" enctype="multipart/form-data">
 
         <label for="sme_name">SME Name:</label><br>
@@ -44,22 +60,6 @@
 
         <label for="sme_p3">SME Paragraph 3:</label><br>
         <textarea id="sme_p3" name="sme_p3" rows="4" cols="50"></textarea><br><br>
-
-        <h1>Session Details (Page 5)</h1>
-        <label for="topic">Topic:</label><br>
-        <textarea type="text" id="topic" name="topic" rows="4" cols="50"></textarea><br><br>
-
-        <label for="date">Date:</label><br>
-        <input type="text" id="date" name="date"><br><br>
-
-        <label for="timings">Timings:</label><br>
-        <input type="text" id="timings" name="timings"><br><br>
-        
-        <label for="About_the_Session">About the Session:</label><br>
-        <textarea id="About_the_Session" name="About_the_Session" rows="4" cols="80"></textarea><br><br>
-
-        <label for="learning_outcomes">Learning Outcomes:</label><br>
-        <textarea id="learning_outcomes" name="learning_outcomes" rows="4" cols="50"></textarea><br><br>
         
         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
         <input type="submit" class="submit" value="Save" formaction="/about_sme"><br><br>
