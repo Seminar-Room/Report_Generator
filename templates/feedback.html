@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph Inputs and Feedback</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your preference */
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .submit {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your preference */
+            background-color: #ff0d00; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Graph Inputs and Feedback</h1>
+    <form action="/feedback" method="post">
+        <h2>Graph Inputs (Page 6)</h2>
+        <h3>enter the percentage in the format (_, _, _, _, _)</h3>
+        <label for="happiness_rating">Happiness Rating:</label><br>
+        <input type="text" id="happiness_rating" name="happiness_rating"><br><br>
+
+        <label for="expectation_rating">Expectation Rating:</label><br>
+        <input type="text" id="expectation_rating" name="expectation_rating"><br><br>
+
+        <label for="knowledge_rating">Knowledge Rating:</label><br>
+        <input type="text" id="knowledge_rating" name="knowledge_rating"><br><br>
+
+        <label for="overall_rating">Overall Rating:</label><br>
+        <input type="text" id="overall_rating" name="overall_rating"><br><br>
+
+        <h2>Feedback Collected (Page 7)</h2>
+        <label for="fb1">Feedback 1:</label><br>
+        <textarea id="fb1" name="fb1" rows="4" cols="50"></textarea><br><br>
+
+        <label for="fb2">Feedback 2:</label><br>
+        <textarea id="fb2" name="fb2" rows="4" cols="50"></textarea><br><br>
+
+        <label for="fb3">Feedback 3:</label><br>
+        <textarea id="fb3" name="fb3" rows="4" cols="50"></textarea><br><br>
+
+        <label for="fb4">Feedback 4:</label><br>
+        <textarea id="fb4" name="fb4" rows="4" cols="50"></textarea><br><br>
+
+        <label for="fb5">Feedback 5:</label><br>
+        <textarea id="fb5" name="fb5" rows="4" cols="50"></textarea><br><br>
+
+        <label for="fb6">Feedback 6:</label><br>
+        <textarea id="fb6" name="fb6" rows="4" cols="50"></textarea><br><br>
+
+        
+         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
+        <input type="submit" class="submit" value="Save" formaction="/feedback"><br><br>
+        <a href="/about_sme" class="button">Prev Page</a>
+        <a href="/snapshots" class="button">Next Page</a>
+        
+            <!-- JavaScript to remember and store input in local storage on input change -->
+        <script>
+           
+            // Add event listeners to store input in local storage on input change for all fields
+            const inputElements = document.querySelectorAll('input[type="text"], textarea');
+            inputElements.forEach((element) => {
+                element.addEventListener('input', function () {
+                    localStorage.setItem(element.id, element.value);
+                });
+            });
+
+            // Retrieve and set the values from local storage
+            inputElements.forEach((element) => {
+                element.value = localStorage.getItem(element.id) || '';
+            });
+
+       </script>
+    </form>
+</body>
+</html>

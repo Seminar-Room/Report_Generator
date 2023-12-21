@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Page Inputs</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your preference */
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            text-align: center;
+        }
+        .submit {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your preference */
+            background-color: #ff0d00; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>About Page  (Page 3)</h1>
+    <form action="/about_page" method="post">
+        <label for="about_p1">Paragraph 1:</label><br>
+        <textarea id="about_p1" name="about_p1" rows="8" cols="80"></textarea><br><br>
+
+        <label for="about_p2">Paragraph 2:</label><br>
+        <textarea id="about_p2" name="about_p2" rows="8" cols="80"></textarea><br><br>
+
+        <label for="about_p3">Paragraph 3:</label><br>
+        <textarea id="about_p3" name="about_p3" rows="8" cols="80"></textarea><br><br>
+
+        <label for="about_p4">Paragraph 4:</label><br>
+        <textarea id="about_p4" name="about_p4" rows="8" cols="80"></textarea><br><br>
+
+         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
+        <input type="submit" class="submit" value="Save" formaction="/about_page"><br><br>
+        <a href="/" class="button">Prev Page</a>
+        <a href="/about_sme" class="button">Next Page</a>
+        
+
+           <!-- JavaScript to remember and store input in local storage on input change -->
+           <script>
+           
+            // Add event listeners to store input in local storage on input change for all fields
+            const inputElements = document.querySelectorAll('input[type="text"], textarea');
+            inputElements.forEach((element) => {
+                element.addEventListener('input', function () {
+                    localStorage.setItem(element.id, element.value);
+                });
+            });
+
+            // Retrieve and set the values from local storage
+            inputElements.forEach((element) => {
+                element.value = localStorage.getItem(element.id) || '';
+            });
+
+       </script>
+
+    </form>
+        
+</body>
+</html>
