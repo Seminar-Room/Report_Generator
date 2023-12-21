@@ -68,7 +68,7 @@ class iip_reports:
     def add_coverpage(self,event_name, college_name, college_logo):
         #coverpage
         # Add a background image of your choice as the certificate template
-        background_path = 'Sample_reports\\1.png'
+        background_path = 'testing_details\\1.png'
         # Draw the background image
         self.canvas.drawImage(background_path, 0, 0, width=210*mm, height=297*mm)
 
