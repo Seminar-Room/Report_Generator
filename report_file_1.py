@@ -18,10 +18,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 
 def register_fonts():
-    font_path1 = r'testing_details\\fonts\\Poppins-Regular.ttf'
+    font_path1 = r'testing_details/fonts/Poppins-Regular.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Regular', font_path1))
 
-    font_path2 = r'testing_details\\fonts\\Poppins-Bold.ttf'
+    font_path2 = r'testing_details/fonts/Poppins-Bold.ttf'
     pdfmetrics.registerFont(TTFont('Poppins-Bold', font_path2))
 
 
@@ -68,7 +68,7 @@ class iip_reports:
     def add_coverpage(self,event_name, college_name, college_logo):
         #coverpage
         # Add a background image of your choice as the certificate template
-        background_path = 'testing_details\\1.png'
+        background_path = 'testing_details/1.png'
         # Draw the background image
         self.canvas.drawImage(background_path, 0, 0, width=210*mm, height=297*mm)
 
@@ -685,7 +685,7 @@ class iip_reports:
         self.canvas.drawImage(snap2, snap2_x, snap2_y, snap2_width, snap2_height)
 
 
-#directory="E:\SEMINARROM\REPORT_GENERATION\Generated reports\\flask_generated_report"
+#directory="E:\SEMINARROM\REPORT_GENERATION\Generated reports/flask_generated_report"
 def iip_report_generator(
         event_name, college_name, college_logo, #coverpage 
         index1,index2,index3,index4,index5, #index 
