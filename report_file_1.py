@@ -60,7 +60,7 @@ class iip_reports:
         self.canvas.showPage()
         
         #addind back ground template
-        background_path = 'testing_details\Feedback FSD - DGI.png'
+        background_path = 'testing_details/Feedback FSD - DGI.png'
         # Draw the background image
         self.canvas.drawImage(background_path, 0, 0, width=210*mm, height=297*mm)
 
