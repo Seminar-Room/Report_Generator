@@ -28,7 +28,7 @@
 </head>
 <body>
     <h1>Enter Graph Inputs and Feedback</h1>
-    <form action="/feedback" method="post">
+    <form action="/repgen/feedback" method="post">
         <h2>Graph Inputs (Page 6)</h2>
         <h3>enter the percentage in the format (_, _, _, _, _)</h3>
         <label for="happiness_rating">Happiness Rating:</label><br>
@@ -64,9 +64,9 @@
 
         
          <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
-        <input type="submit" class="submit" value="Save" formaction="/feedback"><br><br>
-        <a href="/about_sme" class="button">Prev Page</a>
-        <a href="/snapshots" class="button">Next Page</a>
+        <input type="submit" class="submit" value="Save" formaction="/repgen/feedback"><br><br>
+        <a href="/repgen/about_sme" class="button">Prev Page</a>
+        <a href="/repgen/snapshots" class="button">Next Page</a>
         
             <!-- JavaScript to remember and store input in local storage on input change -->
         <script>

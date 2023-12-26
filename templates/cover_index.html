@@ -28,7 +28,7 @@
 </head>
 <body>
     <h1>Cover Page Input (Page 1)</h1>
-    <form method="POST" action="/" enctype="multipart/form-data">
+    <form method="POST" action="/repgen/" enctype="multipart/form-data">
         <label for="event_name">Event Name:</label>
         <input type="text" id="event_name" name="event_name" required><br><br>
         
@@ -53,7 +53,7 @@
         
         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
         <input type="submit" class="submit" value="Save" formaction="/"><br><br>
-        <a href="/about_page" class="button">Next Page</a>
+        <a href="/repgen/about_page" class="button">Next Page</a>
 
            <!-- JavaScript to remember and restore user input -->
            <script>

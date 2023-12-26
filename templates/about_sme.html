@@ -28,7 +28,7 @@
 </head>
 <body>
     <h1>Session Details (Page 4)</h1>
-    <form action="/about_sme" method="post" enctype="multipart/form-data">
+    <form action="/repgen/about_sme" method="post" enctype="multipart/form-data">
 
         <label for="topic">Topic:</label><br>
         <textarea type="text" id="topic" name="topic" rows="4" cols="50"></textarea><br><br>
@@ -46,7 +46,7 @@
         <textarea id="learning_outcomes" name="learning_outcomes" rows="4" cols="50"></textarea><br><br>
         
     <h1>Enter SME Details (Page 5)</h1>
-    <form action="/about_sme" method="post" enctype="multipart/form-data">
+    <form action="/repgen/about_sme" method="post" enctype="multipart/form-data">
 
         <label for="sme_name">SME Name:</label><br>
         <textarea type="text" id="sme_name" name="sme_name" rows="4" cols="50" ></textarea><br><br>
@@ -64,9 +64,9 @@
         <textarea id="sme_p3" name="sme_p3" rows="4" cols="50"></textarea><br><br>
         
         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
-        <input type="submit" class="submit" value="Save" formaction="/about_sme"><br><br>
-        <a href="/about_page" class="button">Prev Page</a>
-        <a href="/feedback" class="button">Next Page</a>
+        <input type="submit" class="submit" value="Save" formaction="/repgen/about_sme"><br><br>
+        <a href="/repgen/about_page" class="button">Prev Page</a>
+        <a href="/repgen/feedback" class="button">Next Page</a>
 
          <!-- JavaScript to remember and store input in local storage on input change -->
          <script>
