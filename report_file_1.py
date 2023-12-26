@@ -148,7 +148,7 @@ class iip_reports:
         self.canvas.drawImage(college_logo, college_logo_x, college_logo_y,college_logo_width,college_logo_height)  
 
         #semianroom logo
-        sr_logo='E:\SEMINARROM\REPORT_GENERATION\Sample_reports\seminarroom logo.png'
+        sr_logo='testing_details/seminarroom logo.png'
         sr_logo_width,sr_logo_height=image_resizer(sr_logo,28*mm,21*mm)
         sr_logo_x= frame_x + (frame_width - sr_logo_width) / 2
         sr_logo_y=53*mm
@@ -684,8 +684,6 @@ class iip_reports:
         snap2_y=50*mm
         self.canvas.drawImage(snap2, snap2_x, snap2_y, snap2_width, snap2_height)
 
-
-#directory="E:\SEMINARROM\REPORT_GENERATION\Generated reports/flask_generated_report"
 def iip_report_generator(
         event_name, college_name, college_logo, #coverpage 
         index1,index2,index3,index4,index5, #index 
