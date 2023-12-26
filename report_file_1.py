@@ -723,7 +723,7 @@ def iip_report_generator(
     #return pdf_canvas
 
     # Create a ZIP file containing all certificates
-    gen='flask_generated'
+    gen='Flask_generated'
     zip_filename = os.path.join(gen, f'{temp_folder}.zip')
     with zipfile.ZipFile(zip_filename, 'w') as zipf:
         for root, _, files in os.walk(temp_folder):
