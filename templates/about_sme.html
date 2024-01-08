@@ -1,91 +1,276 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>SME and Session Details</title>
-    <style>
-        .button {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding to your preference */
-            background-color: #007BFF; /* Button background color */
-            color: #fff; /* Button text color */
-            text-decoration: none;
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            text-align: center;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- <h1>Session Details (Page 4)</h1>
+    <form
+      action="/repgen/about_sme"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="topic">Topic:</label><br />
+      <textarea
+        type="text"
+        id="topic"
+        name="topic"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
 
-        .submit {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding to your preference */
-            background-color: #ff0d00; /* Button background color */
-            color: #fff; /* Button text color */
-            text-decoration: none;
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Session Details (Page 4)</h1>
-    <form action="/repgen/about_sme" method="post" enctype="multipart/form-data">
+      <label for="date">Date:</label><br />
+      <input type="text" id="date" name="date" /><br /><br />
 
-        <label for="topic">Topic:</label><br>
-        <textarea type="text" id="topic" name="topic" rows="4" cols="50"></textarea><br><br>
+      <label for="timings">Timings:</label><br />
+      <input type="text" id="timings" name="timings" /><br /><br />
 
-        <label for="date">Date:</label><br>
-        <input type="text" id="date" name="date"><br><br>
+      <label for="About_the_Session">About the Session:</label><br />
+      <textarea
+        id="About_the_Session"
+        name="About_the_Session"
+        rows="4"
+        cols="80"
+      ></textarea
+      ><br /><br />
 
-        <label for="timings">Timings:</label><br>
-        <input type="text" id="timings" name="timings"><br><br>
-        
-        <label for="About_the_Session">About the Session:</label><br>
-        <textarea id="About_the_Session" name="About_the_Session" rows="4" cols="80"></textarea><br><br>
-
-        <label for="learning_outcomes">Learning Outcomes:</label><br>
-        <textarea id="learning_outcomes" name="learning_outcomes" rows="4" cols="50"></textarea><br><br>
-        
-    <h1>Enter SME Details (Page 5)</h1>
-    <form action="/repgen/about_sme" method="post" enctype="multipart/form-data">
-
-        <label for="sme_name">SME Name:</label><br>
-        <textarea type="text" id="sme_name" name="sme_name" rows="4" cols="50" ></textarea><br><br>
-
-        <label for="sme_designation">SME Designation:</label><br>
-        <textarea type="text" id="sme_designation" name="sme_designation"rows="4" cols="50" ></textarea><br><br>
-
-        <label for="sme_p1">SME Paragraph 1:</label><br>
-        <textarea id="sme_p1" name="sme_p1" rows="4" cols="50"></textarea><br><br>
-
-        <label for="sme_p2">SME Paragraph 2:</label><br>
-        <textarea id="sme_p2" name="sme_p2" rows="4" cols="50"></textarea><br><br>
-
-        <label for="sme_p3">SME Paragraph 3:</label><br>
-        <textarea id="sme_p3" name="sme_p3" rows="4" cols="50"></textarea><br><br>
-        
-        <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
-        <input type="submit" class="submit" value="Save" formaction="/repgen/about_sme"><br><br>
-        <a href="/repgen/about_page" class="button">Prev Page</a>
-        <a href="/repgen/feedback" class="button">Next Page</a>
-
-         <!-- JavaScript to remember and store input in local storage on input change -->
-         <script>
-           
-            // Add event listeners to store input in local storage on input change for all fields
-            const inputElements = document.querySelectorAll('input[type="text"], textarea');
-            inputElements.forEach((element) => {
-                element.addEventListener('input', function () {
-                    localStorage.setItem(element.id, element.value);
-                });
-            });
-
-            // Retrieve and set the values from local storage
-            inputElements.forEach((element) => {
-                element.value = localStorage.getItem(element.id) || '';
-            });
-
-       </script>
-     
+      <label for="learning_outcomes">Learning Outcomes:</label><br />
+      <textarea
+        id="learning_outcomes"
+        name="learning_outcomes"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
     </form>
-</body>
+    <h1>Enter SME Details (Page 5)</h1>
+    <form
+      action="/repgen/about_sme"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <label for="sme_name">SME Name:</label><br />
+      <textarea
+        type="text"
+        id="sme_name"
+        name="sme_name"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
+
+      <label for="sme_designation">SME Designation:</label><br />
+      <textarea
+        type="text"
+        id="sme_designation"
+        name="sme_designation"
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br /><br />
+
+      <label for="sme_p1">SME Paragraph 1:</label><br />
+      <textarea id="sme_p1" name="sme_p1" rows="4" cols="50"></textarea
+      ><br /><br />
+
+      <label for="sme_p2">SME Paragraph 2:</label><br />
+      <textarea id="sme_p2" name="sme_p2" rows="4" cols="50"></textarea
+      ><br /><br />
+
+      <label for="sme_p3">SME Paragraph 3:</label><br />
+      <textarea id="sme_p3" name="sme_p3" rows="4" cols="50"></textarea
+      ><br /><br />
+
+      <input
+        type="submit"
+        class="submit"
+        value="Save"
+        formaction="/repgen/about_sme"
+      /><br /><br />
+      <a href="/repgen/about_page" class="button">Prev Page</a>
+      <a href="/repgen/feedback" class="button">Next Page</a>
+    </form> -->
+
+    <main class="bg-gray-100 p-4 py-6">
+      <div class="flex flex-row">
+        <div class="w-full max-w-md p-6 mx-auto bg-white rounded-lg shadow-md">
+          <h1 class="text-2xl font-semibold text-center">Session Details</h1>
+          <form
+            class="mt-6"
+            action="/repgen/about_sme"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div>
+              <label class="block text-md font-semibold text-gray-800"
+                >Topic:</label
+              >
+              <textarea
+                id="topic"
+                name="topic"
+                rows="6"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >Date:</label
+              >
+              <input
+                id="date"
+                name="date"
+                type="text"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              />
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >Timings:</label
+              >
+              <input
+                id="timings"
+                name="timings"
+                type="text"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              />
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >About the Session:</label
+              >
+              <textarea
+                id="About_the_Session"
+                name="About_the_Session"
+                rows="6"
+                cols="80"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >Learning Outcomes:</label
+              >
+              <textarea
+                id="learning_outcomes"
+                name="learning_outcomes"
+                rows="6"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="w-full max-w-md p-6 mx-auto bg-white rounded-lg shadow-md">
+          <h1 class="text-2xl font-semibold text-center">Enter SME Details</h1>
+          <form
+            class="mt-6"
+            action="/repgen/about_sme"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div>
+              <label class="block text-md font-semibold text-gray-800"
+                >SME Name:</label
+              >
+              <textarea
+                id="sme_name"
+                name="sme_name"
+                rows="3"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >SME Designation:</label
+              >
+              <textarea
+                id="sme_designation"
+                name="sme_designation"
+                rows="3"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >SME Paragraph 1:</label
+              >
+              <textarea
+                id="sme_p1"
+                name="sme_p1"
+                rows="4"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >SME Paragraph 2:</label
+              >
+              <textarea
+                id="sme_p2"
+                name="sme_p2"
+                rows="4"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <label class="block text-md font-semibold text-gray-800"
+                >SME Paragraph 3:</label
+              >
+              <textarea
+                id="sme_p3"
+                name="sme_p3"
+                rows="4"
+                cols="50"
+                class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+              ></textarea>
+            </div>
+
+            <div class="flex items-center justify-between mt-4"></div>
+          </form>
+        </div>
+      </div>
+      <div class="flex items-center justify-center mt-6 gap-3">
+        <input
+          type="submit"
+          value="Save"
+          class="px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+          formaction="/repgen/about_sme"
+        />
+        <a
+          href="/repgen/about_page"
+          class="px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400"
+          >Prev Page</a
+        >
+        <a
+          href="/repgen/feedback"
+          class="px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-500 focus:outline-none focus:bg-green-500"
+          >Next Page</a
+        >
+      </div>
+    </main>
+    <script>
+      // Add event listeners to store input in local storage on input change for all fields
+      const inputElements = document.querySelectorAll(
+        'input[type="text"], textarea'
+      )
+      inputElements.forEach((element) => {
+        element.addEventListener('input', function () {
+          localStorage.setItem(element.id, element.value)
+        })
+      })
+
+      // Retrieve and set the values from local storage
+      inputElements.forEach((element) => {
+        element.value = localStorage.getItem(element.id) || ''
+      })
+    </script>
+  </body>
 </html>
