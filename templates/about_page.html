@@ -1,70 +1,130 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>About Page Inputs</title>
-    <style>
-        .button {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding to your preference */
-            background-color: #007BFF; /* Button background color */
-            color: #fff; /* Button text color */
-            text-decoration: none;
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            text-align: center;
-        }
-        .submit {
-            display: inline-block;
-            padding: 10px 20px; /* Adjust padding to your preference */
-            background-color: #ff0d00; /* Button background color */
-            color: #fff; /* Button text color */
-            text-decoration: none;
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>About Page  (Page 3)</h1>
-    <form action="/repgen/about_page" method="post">
-        <label for="about_p1">Paragraph 1:</label><br>
-        <textarea id="about_p1" name="about_p1" rows="8" cols="80"></textarea><br><br>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main
+      class="flex flex-col items-center justify-center bg-gray-100 p-4 py-6"
+    >
+      <div class="w-full max-w-md p-6 m-auto bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-semibold text-center">About Page</h1>
+        <form class="mt-6" action="/repgen/about_page" method="post">
+          <div>
+            <label class="block text-md font-semibold text-gray-800"
+              >Paragraph 1:</label
+            >
+            <textarea
+              id="about_p1"
+              name="about_p1"
+              rows="4"
+              cols="80"
+              class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <label class="block text-md font-semibold text-gray-800"
+              >Paragraph 2:</label
+            >
+            <textarea
+              id="about_p2"
+              name="about_p2"
+              rows="4"
+              cols="80"
+              class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <label class="block text-md font-semibold text-gray-800"
+              >Paragraph 3:</label
+            >
+            <textarea
+              id="about_p3"
+              name="about_p3"
+              rows="4"
+              cols="80"
+              class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <label class="block text-md font-semibold text-gray-800"
+              >Paragraph 4:</label
+            >
+            <textarea
+              id="about_p4"
+              name="about_p4"
+              rows="4"
+              cols="80"
+              class="w-full px-4 py-2 mt-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-200"
+            ></textarea>
+          </div>
+          <div class="flex items-center justify-between mt-6 gap-3">
+            <input
+              type="submit"
+              value="Save"
+              class="w-full px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+              formaction="/repgen/about_page"
+            />
+            <a
+              href="/repgen/"
+              class="w-full px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400"
+              >Prev Page</a
+            >
+            <a
+              href="/repgen/about_sme"
+              class="w-full px-4 py-2 text-sm font-medium text-center text-white transition-colors duration-200 transform bg-green-600 rounded-md hover:bg-green-500 focus:outline-none focus:bg-green-500"
+              >Next Page</a
+            >
+          </div>
+          <div class="flex items-center justify-between mt-4"></div>
 
-        <label for="about_p2">Paragraph 2:</label><br>
-        <textarea id="about_p2" name="about_p2" rows="8" cols="80"></textarea><br><br>
-
-        <label for="about_p3">Paragraph 3:</label><br>
-        <textarea id="about_p3" name="about_p3" rows="8" cols="80"></textarea><br><br>
-
-        <label for="about_p4">Paragraph 4:</label><br>
-        <textarea id="about_p4" name="about_p4" rows="8" cols="80"></textarea><br><br>
-
-         <!-- Use submit buttons to submit the form and navigate to the next/previous page -->
-        <input type="submit" class="submit" value="Save" formaction="/repgen/about_page"><br><br>
-        <a href="/repgen/" class="button">Prev Page</a>
-        <a href="/repgen/about_sme" class="button">Next Page</a>
-        
-
-           <!-- JavaScript to remember and store input in local storage on input change -->
-           <script>
-           
+          <!-- JavaScript to remember and store input in local storage on input change -->
+          <script>
             // Add event listeners to store input in local storage on input change for all fields
-            const inputElements = document.querySelectorAll('input[type="text"], textarea');
+            const inputElements = document.querySelectorAll(
+              'input[type="text"], textarea'
+            )
             inputElements.forEach((element) => {
-                element.addEventListener('input', function () {
-                    localStorage.setItem(element.id, element.value);
-                });
-            });
+              element.addEventListener('input', function () {
+                localStorage.setItem(element.id, element.value)
+              })
+            })
 
             // Retrieve and set the values from local storage
             inputElements.forEach((element) => {
-                element.value = localStorage.getItem(element.id) || '';
-            });
+              element.value = localStorage.getItem(element.id) || ''
+            })
+          </script>
+        </form>
+      </div>
+    </main>
 
-       </script>
+    <!-- <form action="/repgen/about_page" method="post">
+      <label for="about_p1">Paragraph 1:</label><br />
+      <textarea id="about_p1" name="about_p1" rows="4" cols="80"></textarea
+      ><br /><br />
 
-    </form>
-        
-</body>
+      <label for="about_p2">Paragraph 2:</label><br />
+      <textarea id="about_p2" name="about_p2" rows="4" cols="80"></textarea
+      ><br /><br />
+
+      <label for="about_p3">Paragraph 3:</label><br />
+      <textarea id="about_p3" name="about_p3" rows="4" cols="80"></textarea
+      ><br /><br />
+
+      <label for="about_p4">Paragraph 4:</label><br />
+      <textarea id="about_p4" name="about_p4" rows="4" cols="80"></textarea
+      ><br /><br />
+
+      <input
+        type="submit"
+        class="submit"
+        value="Save"
+        formaction="/repgen/about_page"
+      /><br /><br />
+      <a href="/repgen/" class="button">Prev Page</a>
+      <a href="/repgen/about_sme" class="button">Next Page</a>
+    </form> -->
+  </body>
 </html>
